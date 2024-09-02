@@ -8,7 +8,11 @@ RUN apt-get update && apt-get install -yqq \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN pip install igraph
+RUN apt-get update && apt-get install -yqq python3-igraph
+
+RUN apt-get update && apt-get install -y libopencv-dev 
+
+RUN apt-get update && apt-get install -y cmake
 
 RUN apt-get update && apt-get install -yqq \
 	cimg-dev \
